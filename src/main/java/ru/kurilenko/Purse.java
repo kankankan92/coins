@@ -9,6 +9,9 @@ public class Purse {
     }
 
     public Coin giveCoin(){
-        return null;
+        int totalCoinTypes = CoinType.values().length; // сколько всего типов монеток
+        int randomTypeIndex = (int)(Math.random() * totalCoinTypes); // случайный порядковый номер
+        CoinType type = CoinType.values()[randomTypeIndex];
+        return new Coin(type);
     }
 }
